@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "./component/Button";
+import Button from "./components/Button";
 
 const App = () => {
   const anecdotes = [
@@ -31,7 +31,6 @@ const App = () => {
   const maxVotes = Math.max(...votes);
   // console.log(maxVotes);
   const winningIndex = votes.indexOf(maxVotes);
-  
 
   return (
     <div>

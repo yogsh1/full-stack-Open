@@ -1,5 +1,5 @@
-import Footer from "./component/Footer";
-import Hello from "./component/Hello";
+import Footer from "./components/Footer";
+import Hello from "./components/Hello";
 
 const App = () => {
 

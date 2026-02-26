@@ -1,6 +1,6 @@
 import { useState } from "react";
-import History from "./component/History";
-import Button from "./component/Button";
+import History from "./components/History";
+import Button from "./components/Button";
 
 const App = () => {
   // const [clicks, setClicks] = useState({
