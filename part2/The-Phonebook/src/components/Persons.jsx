@@ -1,0 +1,16 @@
+const Persons = (props) => {
+    const {personsToShow} = props
+  return (
+    <>
+      <ol>
+        {personsToShow.map((person) => (
+          <li key={person.name}>
+            {person.name} {person.number}
+          </li>
+        ))}
+      </ol>
+    </>
+  );
+};
+
+export default Persons;
