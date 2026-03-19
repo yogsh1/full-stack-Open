@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Note from "./components/Note";
 import axios from "axios";
+import noteService from "./services/notes";
 
 const App = () => {
   const [notes, setNotes] = useState([]);
@@ -18,7 +19,7 @@ const App = () => {
   useEffect(hook, []); */
 
   useEffect(() => {
-    console.log("effect");
+    /* console.log("effect");
 
     const eventHandler = (response) => {
       console.log("promise fulfilled");
@@ -26,7 +27,12 @@ const App = () => {
     };
 
     const promise = axios.get("http://localhost:3001/notes");
-    promise.then(eventHandler);
+    promise.then(eventHandler); */
+
+    noteService.getAll().then((initialNotes) => {
+      // console.log(initialNotes)
+      setNotes(initialNotes);
+    });
   }, []);
 
   console.log("render", notes.length, "notes");
@@ -38,11 +44,16 @@ const App = () => {
       content: newNote,
       important: Math.random() < 0.5,
     };
-    console.log(noteObject);
+    console.log(noteObject, "kokokokoko");
 
-    axios.post("http://localhost:3001/notes", noteObject).then((response) => {
+    /* axios.post("http://localhost:3001/notes", noteObject).then((response) => {
       console.log(response);
       setNotes(notes.concat(response.data));
+      setNewNote("");
+    }); */
+
+    noteService.create(noteObject).then((returnedNote) => {
+      setNotes(notes.concat(returnedNote));
       setNewNote("");
     });
   };
@@ -53,14 +64,21 @@ const App = () => {
   };
 
   const toggleImportanceOf = (id) => {
-    const url = `http://localhost:3001/notes/${id}`;
+    // const url = `http://localhost:3001/notes/${id}`;
     const note = notes.find((n) => n.id === id);
     const changedNote = { ...note, important: !note.important };
+    // console.log(changedNote)
 
-    axios.put(url, changedNote).then((response) => {
+    /* axios.put(url, changedNote).then((response) => {
       setNotes(notes.map((note) => (note.id === id ? response.data : note)));
-    });
-    // console.log(`importance of ${id} needs to be toggled`);
+    }); */
+
+    noteService.update(id, changedNote).then((returnedNote) => {
+      setNotes(notes.map((note) => (note.id === id ? returnedNote : note)));
+    }).catch(err => {
+      alert(`the note '${note.content}' was already deleted from the server`)
+      setNotes(notes.filter(n => n.id !== id))
+    });;
   };
 
   const notesToShow = showAll ? notes : notes.filter((note) => note.important);

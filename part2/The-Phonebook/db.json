@@ -1,24 +1,85 @@
 {
-  "persons":[
-    { 
-      "name": "Arto Hellas", 
-      "number": "040-123456",
-      "id": "1"
+  "persons": [
+    {
+      "id": "b3e1",
+      "name": "gd45435",
+      "number": "4564654645"
     },
-    { 
-      "name": "Ada Lovelace", 
-      "number": "39-44-5323523",
-      "id": "2"
+    {
+      "id": "be96",
+      "name": "gfgdfg",
+      "number": "466546456"
     },
-    { 
-      "name": "Dan Abramov", 
-      "number": "12-43-234345",
-      "id": "3"
+    {
+      "id": "9056",
+      "name": "fine",
+      "number": "645645645645645"
     },
-    { 
-      "name": "Mary Poppendieck", 
-      "number": "39-23-6423122",
-      "id": "4"
+    {
+      "id": "08da",
+      "name": "no help",
+      "number": "545345345345345345"
+    },
+    {
+      "id": "20e7",
+      "name": "fine ",
+      "number": "645645645645645 "
+    },
+    {
+      "id": "5cee",
+      "name": "",
+      "number": ""
+    },
+    {
+      "id": "e650",
+      "name": "no help",
+      "number": "545345345345345345"
+    },
+    {
+      "name": "gfgdfg ",
+      "number": "466546456 ",
+      "id": "a776"
+    },
+    {
+      "id": "89f5",
+      "name": "gfgdfg",
+      "number": "466546456"
+    },
+    {
+      "id": "93e0",
+      "name": "",
+      "number": ""
+    },
+    {
+      "id": "1f1d",
+      "name": "feds",
+      "number": "w5345345"
+    },
+    {
+      "id": "db9c",
+      "name": "",
+      "number": ""
+    },
+    {
+      "id": "3ec5",
+      "name": "",
+      "number": ""
+    },
+    {
+      "id": "3a4d",
+      "name": "",
+      "number": ""
+    },
+    {
+      "id": "a282",
+      "name": " gfgdfg ",
+      "number": "466546456 "
+    },
+    {
+      "id": "63a9",
+      "name": "a",
+      "number": "123"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
